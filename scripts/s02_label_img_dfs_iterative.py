@@ -42,7 +42,7 @@ def add_neighbours(set_neighs: set, i, j, neighs, n, m):
 def traverse(arr: np.array, i: int, j: int,
              neighs: list, th: int, label: int,
              n: int, m: int) -> None:
-
+    arr[i, j] = label
     to_visit = set()
     add_neighbours(to_visit, i, j, neighs, n, m)
 
@@ -55,7 +55,6 @@ def traverse(arr: np.array, i: int, j: int,
 
 def label_regions(th: int, img: np.array) -> np.array:
     '''will identify and label regions with intensity lower than th'''
-
     arr = img.copy()
     dim1, dim2 = img.shape
     label = -1

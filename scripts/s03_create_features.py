@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 from s02_label_img_dfs_iterative import label_regions
 
 
-def example_matrix(size):
+def example_matrix(size, th):
     mat = np.array([
             random.randint(0, 10) for i in range(size**2)
             ]).reshape(size, size)
-    return mat, label_regions(6, mat)
+    return mat, label_regions(th, mat)
 
 
 def f_size(label_arr: np.array) -> list:
@@ -28,11 +28,8 @@ def f_size(label_arr: np.array) -> list:
 
 
 if __name__ == '__main__':
-    mat, label_mat = example_matrix(50)
-    sizes = f_size(label_mat)
-    print(mat, label_mat, sizes)
-    plt.plot(list(sizes.keys()),
-             list(sizes.values()), 'ob', markersize=10)
+    for i in range(1, 10):
+        mat, label_mat = example_matrix(50, i)
+        sizes = f_size(label_mat)
+        plt.hist(list(sizes.values()), bins=[1, 10, 100, 1000])
     plt.show()
-    # plt.hist(sizes.keys(), sizes.values())
-    # plt.show()
