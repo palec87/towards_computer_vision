@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-import scripts.s01_label_img_dfs_recursion as m
+import scripts.s02_label_img_dfs_iterative as m
 
 
 @pytest.mark.parametrize('mat, ass', [
@@ -15,6 +15,5 @@ def test_int_array(mat, ass):
     '''
     test labeling simple array
     '''
-    neighs = [(-1, 0), (0, -1), (1, 0), (0, 1)]
-    result = m.DFS(mat, 0, 0, neighs, th=3, label=-1, n=3, m=3)
+    result = m.label_regions(th=3, img=mat)
     assert (result - ass).all() == 0
