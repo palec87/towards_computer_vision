@@ -39,13 +39,14 @@ def DFS(arr: np.array, i: int, j: int,
             # check if indices are valid
             if (0 <= i+neigh[0] < n) & (0 <= j+neigh[1] < m):
                 DFS(arr, i+neigh[0], j+neigh[1], neighs, th, label, n, m)
+    return arr
 
 
 def label_regions(th: int, img: np.array) -> np.array:
     '''will identify and label regions with intensity lower than th'''
     print('recursion depth limit:', sys.getrecursionlimit())
     arr = img.copy()
-    dim1, dim2 = len(img[:, 0]), len(img[0, :])
+    dim1, dim2 = img.shape
     label = -1
     neighs = [(-1, 0), (0, -1), (1, 0), (0, 1)]
     for i in range(dim1):

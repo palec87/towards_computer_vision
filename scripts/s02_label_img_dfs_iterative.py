@@ -57,7 +57,7 @@ def label_regions(th: int, img: np.array) -> np.array:
     '''will identify and label regions with intensity lower than th'''
 
     arr = img.copy()
-    dim1, dim2 = len(img[:, 0]), len(img[0, :])
+    dim1, dim2 = img.shape
     label = -1
     neighs = [(-1, 0), (0, -1), (1, 0), (0, 1)]
 

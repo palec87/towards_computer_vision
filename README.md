@@ -5,9 +5,9 @@
 
 ## My initial plan
 1. Before even trying any deep learning games I will write my own rudimentary model including the underlying algos
-2. Maybe one day I will arrive to submit it against the comp data. That will be my benchmark
+2. One day I might submit it against the comp data. That is going to be my benchmark
 3. Only then I start to deploy tens of crazy AI models running all night on my laptop.
-  * If get so far, I might be technically breaking the comp rules of public sharing of code outside of Kaggle, but so far I consider it very improbable:)
+  * If get that far, I might be technically breaking the comp rules of public sharing of code outside of Kaggle, but at this point I consider it very improbable:)
 
 ## List of scripts so far
 1. 01_label_img_dfs_recursion.py
